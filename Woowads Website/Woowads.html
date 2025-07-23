@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woowads - Digital Marketing & Graphic Design Services</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+<style> * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f78903 0%, #c8e934 100%);
+            color: #333;
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated background gradient */
+        .background-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f67905, #56b6af, #65bed2, #b7ebd3, #f7e4a5, #f1a4f1);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .glass-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50%);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 250PX;
+            height: auto;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            margin: 0;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            color: rgb(2, 2, 2);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.05rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+             transform: scale(1.05);
+        }
+
+        .btn-signing {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: rgb(0, 0, 0);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-signing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-signing:hover::before {
+            left: 100%;
+        }
+
+        .btn-signing:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+        }
+
+        .btn-signing:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+            width: 150px;
+            height: 150px;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+            width: 80px;
+            height: 80px;
+        }
+
+        .floating-element:nth-child(4) {
+            top: 50%;
+            right: 10%;
+            animation-delay: 1s;
+            width: 120px;
+            height: 120px;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        /* Home page */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: rgb(0, 0, 0);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #361a1a, #211f1f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            margin-top: 1rem;
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: #000000;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: rgb(134, 73, 73);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: rgb(134, 73, 73);
+            border: 2px solid rgb(208, 204, 204);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Services grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            color: rgb(0, 0, 0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1c1d1d;
+        }
+
+        /* Section headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: rgb(0, 0, 0);
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* About page */
+        .page {
+            /* display: none; */
+            min-height: 80vh;
+            padding: 0rem 0;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+            align-items: center;
+        }
+
+        .about-text {
+            color: rgb(0, 0, 0);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .about-text h3 {
+            color: #1c1d1d;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgb(0, 0, 0);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #1c1d1d;
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(45deg, #4ecdc4, #ff6b6b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgb(0, 0, 0);
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+            color: rgb(0, 0, 0);
+        }
+
+        .portfolio-content h4 {
+            color: #1c1d1d;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1c1d1d;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #1c1d1d;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #1c1d1d;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #4ecdc4;
+        }
+
+        /* Loading animation */
+        .loading {
+            display: none;
+            text-align: center;
+            color: #1c1d1d;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid #4ecdc4;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .footer {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgb(0, 0, 0);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #1c1d1d;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .footer-section ul li a:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .footer-section ul li a:hover {
+            opacity: 1;
+            color: #1c1d1d;
+            padding-left: 1.5rem;
+        }
+
+        .footer-section ul li a:hover:before {
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: #4ecdc4;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .contact-info .icon {
+            margin-right: 0.8rem;
+            font-size: 1.1rem;
+            color: #1c1d1d;
+        }
+
+        .newsletter {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }/* Alternative Grid Layout */
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.newsletter-input {
+  padding: 12px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: white;
+}
+
+.newsletter-button {
+  background: #4ECDC4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .newsletter-form {
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+  }
+  
+  .newsletter-input {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .newsletter-button {
+    border-radius: 0 0 10px 10px;
+  }
+}/* Alternative Grid Layout */
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.newsletter-input {
+  padding: 12px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: white;
+}
+
+.newsletter-button {
+  background: #4ECDC4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .newsletter-form {
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+  }
+  
+  .newsletter-input {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .newsletter-button {
+    border-radius: 0 0 10px 10px;
+  }
+}/* Alternative Grid Layout */
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.newsletter-input {
+  padding: 12px 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: white;
+}
+
+.newsletter-button {
+  background: #4ECDC4;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .newsletter-form {
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+  }
+  
+  .newsletter-input {
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .newsletter-button {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem 0.5rem;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgb(0, 0, 0);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .newsletter-input::placeholder {
+            color: #1c1d1d;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #4ecdc4;
+        }
+
+        .newsletter-btn {
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        @media screen and (max-width: 768px) {
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-input {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-btn {
+                width: 100%;
+            }
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links a:hover {
+            opacity: 1;
+            color: #4ecdc4;
+        }
+
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-container {
+                padding: 0 1rem;
+            }
+
+            .footer {
+                padding: 2rem 0 1rem;
+            }
+
+            .newsletter {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+
+            .logo {
+                margin-left: 0;
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .btn-signing {
+                margin-right: 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }</style>
+
+</head>
+<body>
+    <div class="background-gradient"></div>
+    <div class="glass-overlay"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+
+    <div class="container">
+        <header>
+            <a href="Woowads.html">
+                <img class ="logo" src="assets/Woowads Logo transparent Black.png" alt="Woowads">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="Woowads.html" onclick="showPage('home')" class="nav-link active">Home</a></li>
+                    <li><a href="About.html" onclick="showPage('about')" class="nav-link active">About</a></li>
+                    <li><a href="Services.html" onclick="showPage('services')" class="nav-link active">Services</a></li>
+                    <li><a href="Portfolio.html" onclick="showPage('portfolio')" class="nav-link active">Portfolio</a>
+                    </li>
+                    <li><a href="Contact.html" onclick="showPage('contact')" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="btn-signing" onclick="window.location.href='Contact.html'">Get Started</button>
+        </header>
+
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="hero">
+                <h1>Digital Marketing & Graphic Design Excellence</h1>
+                <p>Transform your brand with our cutting-edge marketing strategies and stunning visual designs</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="showPage('services')">Our Services</button>
+                    <button class="btn btn-secondary" onclick="showPage('portfolio')">View Portfolio</button>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Why Choose Woowads?</h2>
+                <p>We deliver results that matter to your business</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🎯</span>
+                    <h3>Targeted Marketing</h3>
+                    <p>Reach the right audience with precision-targeted campaigns that drive real results and maximize
+                        your ROI.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Creative Design</h3>
+                    <p>Stand out with visually stunning designs that capture attention and communicate your brand
+                        message effectively.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">📈</span>
+                    <h3>Growth Analytics</h3>
+                    <p>Track your success with detailed analytics and insights that help optimize your marketing
+                        performance.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <div class="section-header">
+                <h2>About Woowads</h2>
+                <p>Your trusted partner in digital growth and creative excellence</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Mission</h3>
+                    <p>At Woowads, we believe that every business deserves to shine in the digital landscape. Our
+                        mission is to empower brands with innovative marketing strategies and captivating designs that
+                        drive engagement, build loyalty, and accelerate growth.</p>
+
+                    <h3>Our Approach</h3>
+                    <p>We combine data-driven insights with creative excellence to deliver campaigns that not only look
+                        amazing but also perform exceptionally. Our team of experts works closely with each client to
+                        understand their unique needs and craft tailored solutions that exceed expectations.</p>
+                </div>
+
+                <div class="about-text">
+                    <h3>What Sets Us Apart</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 1rem;">✅ <strong>Expert Team:</strong> Industry professionals with
+                            years of experience</li>
+                        <li style="margin-bottom: 1rem;">✅ <strong>Proven Results:</strong> Track record of successful
+                            campaigns</li>
+                        <li style="margin-bottom: 1rem;">✅ <strong>Custom Solutions:</strong> Tailored strategies for
+                            each client</li>
+                        <li style="margin-bottom: 1rem;">✅ <strong>24/7 Support:</strong> Always available when you need
+                            us</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">500+</span>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1000+</span>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">99%</span>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5+</span>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive digital solutions for your business growth</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">📱</span>
+                    <h3>Social Media Marketing</h3>
+                    <p>Build your brand presence across all major social platforms with engaging content and strategic
+                        campaigns that drive follower growth and engagement.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem;">
+                        <li>• Content Creation & Curation</li>
+                        <li>• Community Management</li>
+                        <li>• Paid Social Advertising</li>
+                        <li>• Influencer Partnerships</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🔍</span>
+                    <h3>SEO & SEM</h3>
+                    <p>Improve your search engine visibility and drive organic traffic with our comprehensive SEO
+                        strategies and targeted search marketing campaigns.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem;">
+                        <li>• Keyword Research & Analysis</li>
+                        <li>• On-Page & Technical SEO</li>
+                        <li>• Google Ads Management</li>
+                        <li>• Local SEO Optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Graphic Design</h3>
+                    <p>Create stunning visual identities and marketing materials that capture your brand essence and
+                        communicate your message effectively to your audience.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem;">
+                        <li>• Logo & Brand Identity</li>
+                        <li>• Marketing Collaterals</li>
+                        <li>• Web & UI Design</li>
+                        <li>• Print Design</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">💻</span>
+                    <h3>Web Development</h3>
+                    <p>Build responsive, user-friendly websites that convert visitors into customers with our modern web
+                        development and design expertise.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem;">
+                        <li>• Custom Website Development</li>
+                        <li>• E-commerce Solutions</li>
+                        <li>• Mobile Optimization</li>
+                        <li>• Website Maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">📧</span>
+                    <h3>Email Marketing</h3>
+                    <p>Nurture your leads and retain customers with personalized email campaigns that drive engagement
+                        and boost your revenue consistently.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem;">
+                        <li>• Campaign Strategy & Design</li>
+                        <li>• List Building & Segmentation</li>
+                        <li>• Automation Workflows</li>
+                        <li>• Performance Analytics</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">📊</span>
+                    <h3>Analytics & Reporting</h3>
+                    <p>Make data-driven decisions with comprehensive analytics and detailed reporting that provide
+                        insights into your marketing performance and ROI.</p>
+                    <ul style="list-style: none; padding: 0; text-align: left; margin-top: 1rem;">
+                        <li>• Performance Tracking</li>
+                        <li>• Custom Dashboards</li>
+                        <li>• ROI Analysis</li>
+                        <li>• Monthly Reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Page -->
+        <div id="portfolio" class="page">
+            <div class="section-header">
+                <h2>Our Portfolio</h2>
+                <p>See how we've helped businesses achieve their digital marketing goals</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🏢</div>
+                    <div class="portfolio-content">
+                        <h4>TechCorp Rebranding</h4>
+                        <p><strong>Service:</strong> Brand Identity, Website Design</p>
+                        <p>Complete brand overhaul for a technology company, including logo design, website redesign,
+                            and marketing materials that increased brand recognition by 150%.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🛍️</div>
+                    <div class="portfolio-content">
+                        <h4>RetailMax E-commerce</h4>
+                        <p><strong>Service:</strong> SEO, Social Media, PPC</p>
+                        <p>Comprehensive digital marketing campaign that boosted online sales by 300% and improved
+                            search rankings for key product categories.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🍽️</div>
+                    <div class="portfolio-content">
+                        <h4>Gourmet Bistro Campaign</h4>
+                        <p><strong>Service:</strong> Social Media, Content Creation</p>
+                        <p>Social media strategy that increased restaurant foot traffic by 85% through engaging content
+                            and targeted local advertising campaigns.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🏥</div>
+                    <div class="portfolio-content">
+                        <h4>HealthFirst Clinic</h4>
+                        <p><strong>Service:</strong> Website Development, Local SEO</p>
+                        <p>Medical practice website with online booking system and local SEO optimization that increased
+                            patient appointments by 120%.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">🎓</div>
+                    <div class="portfolio-content">
+                        <h4>EduLearn Platform</h4>
+                        <p><strong>Service:</strong> UI/UX Design, Email Marketing</p>
+                        <p>Educational platform redesign with improved user experience and email marketing automation
+                            that increased course enrollments by 200%.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">💼</div>
+                    <div class="portfolio-content">
+                        <h4>StartupHub Accelerator</h4>
+                        <p><strong>Service:</strong> Full Digital Strategy</p>
+                        <p>Complete digital transformation including website, social media, and content strategy that
+                            helped secure $2M in startup funding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to take your business to the next level? Let's start the conversation!</p>
+            </div>
+
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" placeholder="Enter your company name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Interested In *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="social-media">Social Media Marketing</option>
+                            <option value="seo-sem">SEO & SEM</option>
+                            <option value="graphic-design">Graphic Design</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="email-marketing">Email Marketing</option>
+                            <option value="analytics">Analytics & Reporting</option>
+                            <option value="full-package">Complete Digital Package</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Project Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="under-5k">Under $5,000</option>
+                            <option value="5k-10k">$5,000 - $10,000</option>
+                            <option value="10k-25k">$10,000 - $25,000</option>
+                            <option value="25k-50k">$25,000 - $50,000</option>
+                            <option value="over-50k">Over $50,000</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Details *</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Tell us about your project, goals, and how we can help you succeed..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn ">Send Message</button>
+                </form>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Sending your message...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <h3>Woowads</h3>
+                    <p>Transform your brand with our cutting-edge marketing strategies and stunning visual designs.
+                        We're your trusted partner in digital growth and creative excellence.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1Cc1T9VMk4/" target="_blank" class="social-link"
+                            title="Facebook">📘</a>
+                        <a href="https://www.twitter.com/woowads" target="_blank" class="social-link"
+                            title="Twitter">🐦</a>
+                        <a href="https://www.instagram.com/woowads.official/" target="_blank" class="social-link"
+                            title="Instagram">📷</a>
+                        <a href="https://www.linkedin.com/company/woowads/posts/?feedView=all" target="_blank" class="social-link"
+                            title="LinkedIn">💼</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('services')">Social Media Marketing</a></li>
+                        <li><a href="#" onclick="showPage('services')">SEO & SEM</a></li>
+                        <li><a href="#" onclick="showPage('services')">Graphic Design</a></li>
+                        <li><a href="#" onclick="showPage('services')">Web Development</a></li>
+                        <li><a href="#" onclick="showPage('services')">Email Marketing</a></li>
+                        <li><a href="#" onclick="showPage('services')">Analytics & Reporting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                        <li><a href="#" onclick="showPage('portfolio')">Portfolio</a></li>
+                        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Newsletter -->
+                <div class="footer-section">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-info">
+                        <span class="icon">📧</span>
+                        <span>hello@woowads.com</span>
+                    </div>
+                    <div class="contact-info">
+                        <span class="icon">📞</span>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-info">
+                        <span class="icon">📍</span>
+                        <span>Digital Marketing Hub, Innovation District</span>
+                    </div>
+                    <div class="contact-info">
+                        <span class="icon">🕒</span>
+                        <span>Mon-Fri 9AM-6PM EST</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <img class="logo" src="assets/Woowads Logo transparent Black.png" alt="Woowads">
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Sitemap</a>
+                </div>
+
+                <div class="copyright">
+                    © 2025 Woowads. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <body>
+<html>
